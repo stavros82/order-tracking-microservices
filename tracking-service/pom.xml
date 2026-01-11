@@ -9,10 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.berry</groupId>
-	<artifactId>tracking-service
-	</artifactId>
+	<artifactId>trackingservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tracking-service</name>
+	<name>trackingservice</name>
 	<description>Tracking Service</description>
 	<url/>
 	<licenses>

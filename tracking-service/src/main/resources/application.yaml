@@ -4,9 +4,9 @@ server:
 
 spring:
   application:
-    name: tracking-service
+    name: trackingservice
   kafka:
-    bootstrap-servers: kafka:29092
+    bootstrap-servers: localhost:9092
     consumer:
       group-id: tracking-group
       auto-offset-reset: earliest

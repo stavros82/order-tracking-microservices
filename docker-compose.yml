@@ -1,4 +1,4 @@
-
+version: '3.8'
 services:
   # --- Database (PostgreSQL) ---
   postgres:
@@ -40,28 +40,3 @@ services:
     container_name: tracking_cache
     ports:
       - "6379:6379"
-
-  order-service:
-    build: ./order-service
-    container_name: order-service
-    ports:
-      - "8080:8080"
-    depends_on:
-           - postgres
-           - kafka
-           - redis
-
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-
-  tracking-service:
-     build: ./tracking-service
-     container_name: tracking-service
-     ports:
-       - "8081:8081"
-     depends_on:
-         - postgres
-         - kafka
-         - redis
-     environment:
-         SPRING_PROFILES_ACTIVE: docker
