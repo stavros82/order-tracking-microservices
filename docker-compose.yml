@@ -1,4 +1,4 @@
-
+version: '3.8'
 services:
   # --- Database (PostgreSQL) ---
   postgres:
@@ -47,21 +47,24 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-           - postgres
-           - kafka
-           - redis
-
+      - postgres
+      - kafka
+      - redis
     environment:
       SPRING_PROFILES_ACTIVE: docker
+    profiles:
+      - "dev-order"
 
   tracking-service:
-     build: ./tracking-service
-     container_name: tracking-service
-     ports:
-       - "8081:8081"
-     depends_on:
-         - postgres
-         - kafka
-         - redis
-     environment:
-         SPRING_PROFILES_ACTIVE: docker
+    build: ./tracking-service
+    container_name: tracking-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+      - kafka
+      - redis
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    profiles:
+      - "dev-tracking"

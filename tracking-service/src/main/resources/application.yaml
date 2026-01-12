@@ -1,4 +1,3 @@
-
 server:
   port: 8081
 
@@ -17,5 +16,5 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   data:
     redis:
-      host: localhost
+      host: redis
       port: 6379

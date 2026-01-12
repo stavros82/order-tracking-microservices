@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  order-service:
+    ports:
+      - "5005:5005"            # debug port exposed to host
+    entrypoint:
+      - "java"
+      - "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
+      - "-jar"
+      - "app.jar"
